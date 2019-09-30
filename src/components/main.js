@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import apiConfig from '../key.js'
+import apiConfig from '../key.js';
+import DayContainer from './dayContainer.js';
 class Main extends Component {
   state={
     city:'helsinki',
@@ -38,6 +39,7 @@ class Main extends Component {
     return (
       <div>
         <h1>Hello World</h1>
+        <DayContainer />
       </div>
     );
   }
