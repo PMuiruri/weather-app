@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import apiConfig from '../key.js';
-import Tile from './Card.js';
+import Card from './Card.js';
 class Main extends Component {
   state={
     city:'helsinki',
@@ -16,23 +16,21 @@ class Main extends Component {
     .then(response => response.json())
     .then(data => {
       this.setState({ today: data, id: data.id, main: data.main, weather:data.weather[0]});
-      console.log(data.id);
-    })
-    .catch(error => console.log(error));
-  };
-  fetchWeekData = () => {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${this.state.id}&units=metric&APPID=${apiConfig.weatherKey}`;
-    fetch(weatherUrl)
-    .then(response => response.json())
+      const weekUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${data.id}&units=metric&APPID=${apiConfig.weatherKey}`;
+      return fetch(weekUrl)
+    }).then(response => response.json())
     .then(weekdata => {
       const weeklyData = weekdata.list.filter(reading => reading.dt_txt.includes("18:00:00"))
-      this.setState({week: weeklyData})
+      this.setState({week: weeklyData});
     })
     .catch(error => console.log(error));
   };
+
   componentDidMount =()=>{
     this.fetchData();
-    this.fetchWeekData();
+    if(this.state.id !== 0){
+      this.fetchWeekData();
+    }
   }
   render() {
     var today = this.state.today
@@ -40,7 +38,7 @@ class Main extends Component {
       return (
       <div>
         <div className="container-fluid">
-        <Tile {...today} {...this.state.main} {...this.state.weather}/>
+        <Card {...today} {...this.state.main} {...this.state.weather}/>
         </div>
       </div>
     );
