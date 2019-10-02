@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Row, Card, Col, Button} from "react-bootstrap";
+import {Row, Col} from "react-bootstrap";
+import '../App.css';
 
-class Tile extends Component {
+class Card extends Component {
   render() {
     var data = (this.props);
 
@@ -10,16 +11,16 @@ class Tile extends Component {
     return (
       <div>
         <Row>
-          <Col md={{span: 6, offset: 3}}>
-            <div class=" card weather-card">
-              <div class="top">
-                <div class="wrapper">
-                  <h1 class="heading">{this.props.name}</h1>
-                  <h3 class="location">{this.props.description}</h3>
+          <Col md={{span: 8, offset: 2}}>
+            <div className=" card weather-card">
+              <div className="top">
+                <div className="wrapper">
+                  <h1 className="heading">{this.props.name}</h1>
+                  <h3 className="location">{this.props.description}</h3>
                   <img src={`http://openweathermap.org/img/wn/${this.props.icon}@2x.png`} alt="weather-icon" className="img-responsive"/>
-                  <p class="temp">
-                    <span class="temp-value">{this.props.temp} </span>
-                    <span class="temp-value">&deg;C</span>
+                  <p className="temp">
+                    <span className="temp-value">{this.props.temp} </span>
+                    <span className="temp-value">&deg;C</span>
                   </p>
                 </div>
               </div>
@@ -34,4 +35,4 @@ class Tile extends Component {
 }
 }
 
-export default Tile;
+export default Card;
