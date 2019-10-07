@@ -13,7 +13,7 @@ class Card extends Component {
     return (
       <div>
         <Row>
-          <Col md={{span: 10, offset: 2}}>
+          <Col md={{span: 10, offset: 1}}>
             <div className=" card weather-card">
               <div className="top">
                 <div className="wrapper">
@@ -28,7 +28,7 @@ class Card extends Component {
               </div>
             </div>
           </Col>
-          <Col md={{span: 10, offset: 2}} >
+          <Col md={{span: 10, offset: 1}} >
             <div className="">
               {weekCards}
             </div>
