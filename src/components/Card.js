@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {Row, Col} from "react-bootstrap";
+import Week from './Week.js';
 import '../App.css';
 
 class Card extends Component {
   render() {
+    let weekCards =this.props.weekdata.map((reading, index) => <Week reading={reading} key={index} />);
     var data = (this.props);
 
     if(typeof(data) != 'undefined'){
@@ -11,7 +13,7 @@ class Card extends Component {
     return (
       <div>
         <Row>
-          <Col md={{span: 8, offset: 2}}>
+          <Col md={{span: 10, offset: 2}}>
             <div className=" card weather-card">
               <div className="top">
                 <div className="wrapper">
@@ -24,6 +26,11 @@ class Card extends Component {
                   </p>
                 </div>
               </div>
+            </div>
+          </Col>
+          <Col md={{span: 10, offset: 2}} >
+            <div className="">
+              {weekCards}
             </div>
           </Col>
         </Row>

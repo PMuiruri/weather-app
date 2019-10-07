@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import apiConfig from '../key.js';
 import Card from './Card.js';
+
 class Main extends Component {
   state={
     city:'helsinki',
@@ -32,13 +33,18 @@ class Main extends Component {
       this.fetchWeekData();
     }
   }
+
   render() {
+
     var today = this.state.today
     if(typeof(today) !=='undefined'){
       return (
       <div>
         <div className="container-fluid">
-        <Card {...today} {...this.state.main} {...this.state.weather}/>
+        <Card {...today} {...this.state.main} {...this.state.weather} weekdata={this.state.week}/>
+        <div className="col-md-8 offset-md-2 card-group">
+
+        </div>
         </div>
       </div>
     );
