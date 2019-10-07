@@ -1,16 +1,20 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background: #112233;
+  width: 100vw;
+  height: 100vh;
+}
+.card{
+  border-radius: 0px;
 }
 .weather-card {
-  margin: 60px auto;
+  margin-top: 60px;
   background: #fff;
   box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
 .weather-card .top {
   position: relative;
-  height: 470px;
   width: 100%;
   overflow: hidden;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/img/weather_background.png") no-repeat;
@@ -41,3 +45,21 @@ body {
   font-weight: 600;
   color: #fff;
 }
+
+.week-card{
+    display: inline-flex;
+    flex-flow: row;
+    box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    padding: 20px 10px;
+    height: 100px;
+    margin: auto;
+    background-color: #fff;
+    height: 100px;
+    transition: .3s linear all;
+  }
+
+  .week-card:hover{
+    box-shadow: 2px 2px 20px #DADADA;
+    transition: .3s linear all;
+  }
