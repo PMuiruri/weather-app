@@ -1,5 +1,5 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Teko', sans-serif;
   background: #112233;
   width: 100vw;
   height: 100vh;
@@ -8,7 +8,7 @@ body {
   border-radius: 0px;
 }
 .weather-card {
-  margin-top: 60px;
+  margin-top: 10px;
   background: #fff;
   box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -26,6 +26,7 @@ body {
   padding: 30px;
   position: relative;
   z-index: 100;
+  text-transform: capitalize;
 }
 .weather-card .top .wrapper .heading {
   margin-top: 20px;
@@ -35,15 +36,16 @@ body {
 }
 .weather-card .top .wrapper .location {
   margin-top: 20px;
-  font-size: 21px;
+  font-size: 30px;
   font-weight: 400;
   color: #fff;
 }
 .weather-card .top .wrapper .temp .temp-value {
   display: inline-block;
-  font-size: 85px;
+  font-size: 95px;
   font-weight: 600;
   color: #fff;
+   text-shadow: 0 1px 0 black;
 }
 
 .week-card{
@@ -56,6 +58,8 @@ body {
     background-color: #fff;
     transition: .3s linear all;
     text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
     border:1px solid #dadada;
   }
 
@@ -63,3 +67,28 @@ body {
     box-shadow: 2px 2px 20px #DADADA;
     transition: .3s linear all;
   }
+  .card-form{
+    margin-top:60px;
+  }
+.card-form:hover, .card-form:active, .card-form:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.card-body {
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-left: 12px;
+  background: #607d8b7d;
+}
+
+.search_fild {
+  border-radius: 0;
+}
+
+.search_btn {
+  line-height: 0.5;
+  height: 38px;
+  border-radius: 0;
+}
