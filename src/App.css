@@ -20,7 +20,7 @@ body {
   background: linear-gradient( rgba(4,60,146, 0.8), rgba(0, 0, 0, 0.5) ), url("/img/asset3.png") no-repeat;
   background-size: cover;
   background-position: center center;
-  filter: brightness(90%);
+  filter: contrast(90%);
 }
 .weather-card .top .wrapper {
   padding: 30px;
@@ -45,7 +45,8 @@ body {
   font-size: 95px;
   font-weight: 600;
   color: #fff;
-   text-shadow: 0 1px 0 black;
+  -webkit-filter: saturate(10);
+  filter: saturate(10);
 }
 
 .week-card{
@@ -59,7 +60,7 @@ body {
     transition: .3s linear all;
     text-align: center;
     text-transform: capitalize;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border:1px solid #dadada;
   }
 
