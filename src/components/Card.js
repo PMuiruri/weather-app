@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col} from "react-bootstrap";
+import Form from './Form.js';
 import Week from './Week.js';
 import '../App.css';
 
@@ -13,6 +14,9 @@ class Card extends Component {
     return (
       <div>
         <Row>
+          <Col md={{span: 8, offset: 2}}>
+            <Form handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange}/>
+          </Col>
           <Col md={{span: 8, offset: 2}}>
             <div className=" card weather-card">
               <div className="top">
