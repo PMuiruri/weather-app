@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import apiConfig from '../key.js';
 import Card from './Card.js';
+import Form from './Form.js';
+
 
 class Main extends Component {
   state={
@@ -10,6 +12,15 @@ class Main extends Component {
     weather:{},
     today: [],
     week:[]
+  }
+  handleChange = e =>{
+    let newcity = e.target.value;
+    this.setState({city: newcity});
+  }
+  handleSubmit = e =>{
+    e.preventDefault();
+     console.log('The button was clicked.');
+     this.fetchData();
   }
   fetchData = () => {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=metric&APPID=${apiConfig.weatherKey}`;
@@ -35,15 +46,13 @@ class Main extends Component {
   }
 
   render() {
-
     var today = this.state.today
     if(typeof(today) !=='undefined'){
       return (
       <div>
         <div className="container-fluid">
-        <Card {...today} {...this.state.main} {...this.state.weather} weekdata={this.state.week}/>
+        <Card {...today} {...this.state.main} {...this.state.weather} weekdata={this.state.week} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
         <div className="col-md-8 offset-md-2 card-group">
-
         </div>
         </div>
       </div>
