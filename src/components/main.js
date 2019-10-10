@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import apiConfig from '../key.js';
 import Card from './Card.js';
-import Form from './Form.js';
-
 
 class Main extends Component {
   state={
