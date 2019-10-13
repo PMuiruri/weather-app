@@ -9,7 +9,8 @@ class Main extends Component {
     main:{},
     weather:{},
     today: [],
-    week:[]
+    week:[],
+    fullweek:[]
   }
   handleChange = e =>{
     let newcity = e.target.value;
@@ -31,7 +32,7 @@ class Main extends Component {
     }).then(response => response.json())
     .then(weekdata => {
       const weeklyData = weekdata.list.filter(reading => reading.dt_txt.includes("18:00:00"))
-      this.setState({week: weeklyData});
+      this.setState({week: weeklyData, fullweek: weekdata.list});
     })
     .catch(error => console.log(error));
   };
@@ -49,7 +50,7 @@ class Main extends Component {
       return (
       <div>
         <div className="container-fluid">
-        <Card {...today} {...this.state.main} {...this.state.weather} weekdata={this.state.week} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        <Card {...today} {...this.state.main} {...this.state.weather} weekdata={this.state.week} fulldata={this.state.fullweek} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
         <div className="col-md-8 offset-md-2 card-group">
         </div>
         </div>
