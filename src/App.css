@@ -10,6 +10,7 @@ body {
 .weather-card {
   margin-top: 10px;
   background: #fff;
+  border:2px solid  #112233;
   box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
@@ -51,17 +52,17 @@ body {
 
 .week-card{
     display: inline-flex;
-    flex-flow: row;
+    flex-flow: column;
     height: 100%;
     width: 20%;
-    padding: 20px 10px;
-    margin: auto;
+    padding: 10px 2px;
+    margin:10px 0px 5px 0px;
     background-color: #fff;
     transition: .3s linear all;
     text-align: center;
     text-transform: capitalize;
-    font-size: 1.4em;
-    border:1px solid #dadada;
+    font-size: 1.8em;
+    border:2px solid  #112233;
   }
 
   .week-card:hover{
@@ -77,10 +78,10 @@ body {
   box-shadow: none;
 }
 .card-body {
-  padding-bottom: 12px;
-  padding-top: 12px;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
   background: #607d8b7d;
 }
 
