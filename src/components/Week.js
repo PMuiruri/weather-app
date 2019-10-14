@@ -3,9 +3,6 @@ import moment from 'moment';
 
 class Week extends Component {
   render() {
-  console.log(this.props.reading);
-  console.log(this.props.reading.weather[0].description);
-
     return (
         <div className="week-card flex-column">
             <p className="font-weight-bold">{moment(this.props.reading.dt*1000).format("dddd")}</p>
@@ -16,5 +13,4 @@ class Week extends Component {
     );
   }
 }
-
 export default Week;
