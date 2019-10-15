@@ -10,15 +10,15 @@ class WeatherCard extends Component {
         <div className="top">
           <div className="wrapper">
           <img src={`http://openweathermap.org/img/wn/${this.props.icon}@2x.png`} alt="weather-icon" className="img-responsive float-right"/>
-            <p className="temp font-weight-bold">
-              <span className="temp-value">{Math.round(this.props.temp)} </span>
-              <span className="temp-value"> &deg;C</span>
-            </p>
-            <h3 className="location">{this.props.description}</h3>
-            <p className="mTop">
-            <p className="heading font-weight-bold">{this.props.name}</p>
+          <p className="">
             <p className="date"><span >{moment(this.props.dt*1000).format("dddd")} </span>
             <span>{moment(this.props.dt*1000).format("LL")}</span></p></p>
+            <p className="heading font-weight-bold">{this.props.name}</p>
+            <p className="font-weight-bold mTop">
+              <span className="temp-value">{Math.round(this.props.temp)} </span>
+              <span className="temp-value"> &deg;C</span>
+              <p className="location">{this.props.description}</p>
+            </p>
           </div>
         </div>
       </div>
