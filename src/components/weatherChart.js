@@ -16,8 +16,8 @@ class weatherChart extends Component {
     return (
       <div style={{ display: 'flex', }}>
         <Chart
-          width={1275}
-          height={450}
+          width={'100%'}
+          height={'45vh'}
           chartType="LineChart"
           loader={<div>Loading Chart</div>}
           data={chartData}
