@@ -7,7 +7,6 @@ class Form extends Component {
       <form className="card card-sm card-form" onSubmit={this.props.handleSubmit}>
         <div className="card-body row no-gutters align-items-center">
           <div className="col-auto">
-            <i className="fas fa-search h4 text-body"></i>
           </div>
           <div className="col">
             <input className="form-control search_fild" type="text" name="city" onChange={this.props.handleChange} value={this.props.city} placeholder="Search a City e.g Helsinki" />
