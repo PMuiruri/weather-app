@@ -14,7 +14,7 @@ class weatherChart extends Component {
     }
 
     return (
-      <div style={{ display: 'flex', }}>
+      <div style={{ display: 'flex', marginBottom: '5px'}}>
         <Chart
           width={'100%'}
           height={'45vh'}
