@@ -7,12 +7,22 @@ class weatherChart extends Component {
   render() {
     const time = this.props.fulldata.map(list => list.dt_txt);
     const temperature = this.props.fulldata.map(list => list.main.temp);
-
-    const chartData = [['Hour', 'Temperature']]
-    for (let i = 0; i < this.props.fulldata.length; i += 1) {
-      chartData.push([moment( time[i]).format('LT'), temperature[i]]);
+    let time1 = time.map(time=>Date.parse(time))
+    const chartData = [['hour', 'Temperature']]
+    for (let i = 0; i < this.props.fulldata.length; i += 1){
+      //chartData.push([{v:time[i].split(' ')[1].split(':')[0],
+        //f:time[i].split(' ')[1]}, temperature[i]]);
+      //chartData.push([time[i].split(' ')[1], temperature[i]]);
+      chartData.push([new Date(time1[i]).toLocaleTimeString('en-US'), temperature[i]]);
+      //chartData.push([moment( time[i]).format('LT'), temperature[i]]);
+      //chartData.push([ i, temperature[i]]);
     }
 
+    console.log(chartData);
+    const day = [];
+    for (let i = 0; i < this.props.fulldata.length; i += 1) {
+      day.push([moment( time[i]).format('dddd')]);
+    }
     return (
       <div style={{ display: 'flex', marginBottom: '5px'}}>
         <Chart
@@ -29,7 +39,9 @@ class weatherChart extends Component {
               title: 'Time',
               minValue: 0,
               titleTextStyle: {color: '#FFF', fontSize: 18, fontStyle:'normal'},
-              textStyle:{color: '#FFF'}
+              textStyle:{color: '#FFF'},
+              type: 'timeofday',
+              ticks:[new Date(time1[0]).toLocaleTimeString('en-US')]
             },
             vAxis: {
               title: 'Temperature',
