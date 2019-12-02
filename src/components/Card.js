@@ -16,19 +16,19 @@ class Card extends Component {
     return (
       <div>
         <Row>
-          <Col md={{span: 12}}>
+          <Col md={{span: 12}} style={{ padding: 0, margin: 0 }}>
             <Form handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange}/>
           </Col>
-          <Col md={{span: 9}}>
+          <Col md={{span: 10}} style={{ padding: 0, margin: 0 }}>
             <div className="">{weekCards}</div>
+            <WeatherCard {...this.props}/>
             <Chart fulldata={this.props.fulldata} {...weekCards}/>
+          </Col>
+          <Col md={{span: 2}} style={{ padding: 0, margin: 0 }}>
             <MiniCard name={'Pressure'} reading={this.props.pressure} icon={'fas fa-wind'}/>
             <MiniCard name={'Humidity'} reading={this.props.humidity} icon={'fas fa-tint'}/>
             <MiniCard name={'Temperature Max'} reading={this.props.temp_max} icon={'fas fa-temperature-high'}/>
             <MiniCard name={'Temperature Min'} reading={this.props.temp_min} icon={'fas fa-temperature-low'} />
-          </Col>
-          <Col md={{span: 3}}>
-            <WeatherCard {...this.props}/>
           </Col>
         </Row>
       </div>

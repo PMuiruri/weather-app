@@ -4,6 +4,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
 .card{
   border-radius: 0px;
 }
@@ -19,7 +23,7 @@ body {
   width: 100%;
   overflow: hidden;
   /* background: linear-gradient( rgba(4,60,146, 0.8), rgba(0, 0, 0, 0.5) ), url('./img/asset3.png') no-repeat; */
-  background: linear-gradient(rgb(217, 83, 79, 0.8), rgb(0,0,0, 0.5)), url('./img/asset3.png') no-repeat;
+  background: url('./img/asset3.png') no-repeat;
   background-size: cover;
   background-position: center center;
   filter: contrast(90%);
@@ -78,10 +82,10 @@ body {
     border:2px solid  #112233;
   }
   .mini-card{
-      display: inline-flex;
+      display: flex;
       flex-flow: column;
       height: 25%;
-      width: 25%;
+      width: 100%;
       padding: 20px 2px;
       margin: auto;
       color: #112233;
