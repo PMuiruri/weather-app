@@ -20,8 +20,8 @@ class Card extends Component {
             <Form handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange}/>
           </Col>
           <Col md={{span: 10}} style={{ padding: 0, margin: 0 }}>
-            <div className="">{weekCards}</div>
             <WeatherCard {...this.props}/>
+            <div className="">{weekCards}</div>
             <Chart fulldata={this.props.fulldata} {...weekCards}/>
           </Col>
           <Col md={{span: 2}} style={{ padding: 0, margin: 0 }}>
