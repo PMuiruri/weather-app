@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('renders the app without crashing', () => {
+  render(<App />);
+  // The app renders a search input for city lookup
+  const searchInput = screen.getByPlaceholderText(/search a city/i);
+  expect(searchInput).toBeInTheDocument();
 });

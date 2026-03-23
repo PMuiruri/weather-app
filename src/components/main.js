@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import apiConfig from '../key.js';
 import Card from './Card.js';
 
 class Main extends Component {
@@ -22,12 +21,13 @@ class Main extends Component {
      this.fetchData();
   }
   fetchData = () => {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=metric&APPID=${apiConfig.weatherKey}`;
+    const weatherKey = process.env.REACT_APP_WEATHER_KEY;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=metric&APPID=${weatherKey}`;
     fetch(weatherUrl)
     .then(response => response.json())
     .then(data => {
       this.setState({ today: data, id: data.id, main: data.main, weather:data.weather[0]});
-      const weekUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${data.id}&units=metric&APPID=${apiConfig.weatherKey}`;
+      const weekUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${data.id}&units=metric&APPID=${weatherKey}`;
       return fetch(weekUrl)
     }).then(response => response.json())
     .then(weekdata => {
